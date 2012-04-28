@@ -1,8 +1,12 @@
-Process Class
+1. It is a good use of Object orientated design in that we have 
+   proper constructors and destructors as well as short tasks that 
+   allocate and deallocate properly.
 
-This class ecapsulates the resources created when spawning a Unix/Linux process with the fork() system call.  It uses the RAII idiom to make usage easier by freeing any 
-resources upone object destruction.
+2. Ideally waiting should be minimized within a program.  Although 
+   performing a small task right now, we may want to implement it 
+   later to do something more useful.  If possible, could the child 
+   process have it's own destructor?  Other than that we would just 
+   have to send a signal to the parent upon completion.
 
-Screencasts of this project are available at
-http://youtu.be/lTB3kiltIuw
-http://youtu.be/L17bVZMxbw0
+3. The parent could receive the return value code that represents 
+   success from the child and use the read command to obtain data.
